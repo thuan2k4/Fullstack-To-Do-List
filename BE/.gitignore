@@ -1,0 +1,7 @@
+__pycache__/
+instance/
+todo.db
+*.db
+.env
+*.log
+venv/
