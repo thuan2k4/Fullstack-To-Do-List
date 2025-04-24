@@ -5,7 +5,6 @@ from sqlalchemy import pool
 
 from alembic import context
 
-
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
@@ -20,10 +19,8 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 
-# Cấu hình db cho SQLite3
 from main import db
 target_metadata = db.metadata
-
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:
