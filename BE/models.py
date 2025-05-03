@@ -1,4 +1,4 @@
-from extension import db
+from extensions import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
@@ -32,7 +32,7 @@ class User(db.Model):
     password = db.Column(db.Text())
     access_jti = db.Column(db.String(), nullable=True)
     refresh_jti = db.Column(db.String(), nullable=True)
-    token_expiry = db.Column(db.DateTime(), nullable=True)
+    
     todos = db.relationship('Todo', backref='user', lazy=True, cascade="all, delete-orphan")
     # task có thể truy ngược về User thông qua tham số user
     # lazy=True là để select, cascade: all-> khi xóa 1 user - xóa hết task, delete-orphan - xóa các task không có relation
@@ -53,4 +53,7 @@ class User(db.Model):
 
     def delete(self):
         db.session.delete(self)
+        db.session.commit()
+    
+    def save(self):
         db.session.commit()

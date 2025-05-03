@@ -10,4 +10,4 @@
 - Khởi tạo alembic: alembic init tên_alembic
 - Tạo tệp tự động: alembic revision --autogenerate -m "[Ghi chú]"
 - Cập nhật migrations: alembic upgrade head
-- Lùi phiên bản migrations: alembuc downgrade -1
+- Lùi phiên bản migrations: alembic downgrade -1

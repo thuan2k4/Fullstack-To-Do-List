@@ -20,7 +20,7 @@ function ListTask() {
     }
 
     const onSubmit = async (e) => {
-        e.preventDefault()
+        e.preventDefault() //lan truyen
         const formData = new FormData(e.target) // create form element
         const taskData = {
             title: formData.get('title'),
